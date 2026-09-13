@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Privacy Policy — Fogo Productivity Chrome Extension</title>
+  <meta name="description" content="Official Privacy Policy for Fogo Productivity Chrome Extension. Learn how we enforce 100% local-first data storage, zero telemetry, and complete privacy compliance." />
+  <meta name="keywords" content="fogo privacy policy, chrome extension privacy, local-first chrome extension, zero telemetry" />
+  <meta name="author" content="Dreainno" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dreainno.website/privacy-policy.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/fogo-app.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blueGray: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom Fogo Notus Theme Styles -->
+  <link rel="stylesheet" href="./assets/css/fogo-theme.css" />
+</head>
+<body class="text-blueGray-700 antialiased bg-blueGray-50 selection:bg-purple-500 selection:text-white flex flex-col min-h-screen">
+
+  <!-- =========================================================================
+       1. Top Fixed Navigation Bar
+       ========================================================================= -->
+  <nav class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-3 py-3 navbar-expand-lg bg-white/95 backdrop-blur shadow-md transition-all duration-200">
+    <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+        <a class="text-blueGray-800 text-base font-bold leading-relaxed inline-flex items-center mr-4 py-1 whitespace-nowrap" href="index.html">
+          <img src="./assets/fogo-app.png" alt="Fogo Logo" class="w-8 h-8 rounded-lg object-contain shadow-md shadow-purple-500/20 mr-2.5" />
+          <span class="tracking-tight text-xl font-extrabold bg-gradient-to-r from-purple-700 via-indigo-700 to-pink-600 bg-clip-text text-transparent">Fogo</span>
+          <span class="ml-2 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 border border-purple-200 hidden sm:inline-block">Chrome Extension</span>
+        </a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none text-blueGray-700 hover:text-purple-600 transition-colors" type="button" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Nav Menu Links -->
+      <div class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none hidden" id="desktop-menu">
+        <ul class="flex flex-col lg:flex-row list-none mr-auto">
+          <li class="flex items-center">
+            <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="index.html#workspaces">
+              <i class="fas fa-desktop text-purple-500 text-sm mr-2"></i> Workspaces
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="index.html#ai-briefing">
+              <i class="fas fa-wand-magic-sparkles text-purple-500 text-sm mr-2"></i> AI Copilot
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="index.html#themes">
+              <i class="fas fa-palette text-purple-500 text-sm mr-2"></i> 22 Themes
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="index.html#soundscapes">
+              <i class="fas fa-headphones text-purple-500 text-sm mr-2"></i> Soundscapes
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="index.html#widgets">
+              <i class="fas fa-cubes text-purple-500 text-sm mr-2"></i> Bento Widgets
+            </a>
+          </li>
+        </ul>
+
+        <!-- Right Side CTAs -->
+        <ul class="flex flex-col lg:flex-row list-none lg:ml-auto items-center space-x-2.5">
+          <li class="flex items-center">
+            <a href="https://chromewebstore.google.com/detail/fogo/obbgfeoggkonopplfhageihbcaigcplk" target="_blank" rel="noopener noreferrer" class="bg-blueGray-100 hover:bg-blueGray-200 text-blueGray-800 text-xs font-bold uppercase px-3.5 py-2 rounded-xl transition-all inline-flex items-center gap-2 cursor-pointer shadow-sm border border-blueGray-200">
+              <i class="fab fa-chrome text-sm text-purple-600"></i> Add to Chrome
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a href="https://dreainno.lemonsqueezy.com/checkout/buy/89b739ee-a0da-4ef7-8b49-b06b0e121661" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white active:from-purple-700 active:to-indigo-700 text-xs font-bold uppercase px-4 py-2 rounded-xl shadow-md hover:shadow-lg hover:shadow-purple-500/20 outline-none focus:outline-none ease-linear transition-all duration-150 inline-flex items-center gap-1.5 cursor-pointer">
+              <i class="fas fa-crown text-amber-300 text-xs"></i> Get Pro • $9.99/yr
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden w-full lg:hidden bg-white border-t border-blueGray-200 mt-2 px-4 py-3">
+      <ul class="flex flex-col space-y-2 text-sm font-semibold">
+        <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="index.html#workspaces"><i class="fas fa-desktop mr-2 text-purple-500"></i> Workspaces</a></li>
+        <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="index.html#ai-briefing"><i class="fas fa-wand-magic-sparkles mr-2 text-purple-500"></i> AI Copilot</a></li>
+        <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="index.html#themes"><i class="fas fa-palette mr-2 text-purple-500"></i> 22 Themes</a></li>
+        <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="index.html#soundscapes"><i class="fas fa-headphones mr-2 text-purple-500"></i> Soundscapes</a></li>
+        <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="index.html#widgets"><i class="fas fa-cubes mr-2 text-purple-500"></i> Bento Widgets</a></li>
+        <li class="pt-2 border-t border-blueGray-100 flex flex-col gap-2">
+          <a href="https://chromewebstore.google.com/detail/fogo/obbgfeoggkonopplfhageihbcaigcplk" target="_blank" rel="noopener noreferrer" class="w-full text-center block bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg shadow">
+            <i class="fab fa-chrome mr-2"></i> Add to Chrome — Free
+          </a>
+          <a href="https://dreainno.lemonsqueezy.com/checkout/buy/89b739ee-a0da-4ef7-8b49-b06b0e121661" target="_blank" rel="noopener noreferrer" class="w-full text-center block bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg shadow">
+            <i class="fas fa-crown mr-2"></i> Get Pro • $9.99/yr
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       2. Hero Header
+       ========================================================================= -->
+  <header class="relative pt-32 pb-16 bg-gradient-to-b from-purple-950 via-blueGray-900 to-blueGray-900 text-white">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-300 text-xs font-mono mb-4">
+        <i class="fas fa-shield-alt"></i> Official Legal Policy
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
+        Privacy Policy
+      </h1>
+      <p class="text-blueGray-300 text-sm sm:text-base max-w-2xl mx-auto">
+        Effective Date: September 13, 2026 • Last Updated: September 13, 2026
+      </p>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       3. Privacy Policy Content (Legally Compliant)
+       ========================================================================= -->
+  <main class="flex-grow py-16 bg-white">
+    <div class="container mx-auto px-6 max-w-4xl text-blueGray-700 text-sm sm:text-base leading-relaxed space-y-10">
+
+      <!-- Executive Overview Card -->
+      <div class="p-6 sm:p-8 rounded-2xl bg-purple-50/60 border border-purple-200/80">
+        <h2 class="text-lg sm:text-xl font-bold text-purple-950 mb-3 flex items-center gap-2">
+          <i class="fas fa-lock text-purple-600"></i> Our Core Privacy Commitment
+        </h2>
+        <p class="text-purple-900/90 text-sm leading-relaxed mb-4">
+          <strong>Fogo</strong> is built upon a fundamental architectural tenet: <strong>Local-First, Zero Remote Telemetry</strong>. 
+          We believe your browser workspace belongs solely to you. We do not track, collect, sell, rent, or transmit your browsing history, keystrokes, personal bookmarks, or search queries to any central servers.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-medium text-purple-900 pt-2 border-t border-purple-200/60">
+          <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> No Remote Analytics</div>
+          <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> 100% Offline Capable</div>
+          <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> Zero Data Monetization</div>
+        </div>
+      </div>
+
+      <!-- 1. Introduction & Scope -->
+      <section class="space-y-3">
+        <h3 class="text-xl font-bold text-blueGray-900 tracking-tight">1. Introduction &amp; Operator Identification</h3>
+        <p>
+          This Privacy Policy governs the use of the <strong>Fogo Chrome Extension</strong> (the &ldquo;Extension&rdquo;) and our associated website 
+          operated by <strong>Dreainno</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;). This policy outlines our policies and procedures 
+          regarding the collection, use, and disclosure of information when you install and use the Extension.
+        </p>
+        <p>
+          By installing and using Fogo, you consent to the practices described in this Privacy Policy. If you do not agree with this policy, please do not install or use the Extension.
+        </p>
+      </section>
+
+      <!-- 2. Google Chrome Web Store Policy Compliance & Permissions -->
+      <section class="space-y-4">
+        <h3 class="text-xl font-bold text-blueGray-900 tracking-tight">2. Manifest V3 Permissions &amp; Technical Justification</h3>
+        <p>
+          In accordance with Google&rsquo;s Chrome Web Store Developer Program Policies and the Limited Use Requirements, Fogo requests only the minimum set of permissions necessary to deliver its declared features:
+        </p>
+        
+        <div class="space-y-3 text-sm">
+          <div class="p-4 rounded-xl border border-blueGray-200 bg-blueGray-50">
+            <span class="font-mono font-bold text-purple-700 text-xs uppercase px-2 py-0.5 rounded bg-purple-100 mr-2">storage &amp; unlimitedStorage</span>
+            <p class="mt-2 text-blueGray-600">
+              <strong>Justification:</strong> Used exclusively to store user configurations locally on your machine, including your selected workspace layout, custom theme preferences, personal notes, and widget configurations. All data resides in <code class="text-xs bg-white px-1 py-0.5 rounded border border-blueGray-200 font-mono">chrome.storage.local</code>, <code class="text-xs bg-white px-1 py-0.5 rounded border border-blueGray-200 font-mono">chrome.storage.sync</code>, and client-side <code class="text-xs bg-white px-1 py-0.5 rounded border border-blueGray-200 font-mono">IndexedDB</code>.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl border border-blueGray-200 bg-blueGray-50">
+            <span class="font-mono font-bold text-purple-700 text-xs uppercase px-2 py-0.5 rounded bg-purple-100 mr-2">tabs</span>
+            <p class="mt-2 text-blueGray-600">
+              <strong>Justification:</strong> Required strictly for the optional &ldquo;Tab Stash &amp; RAM Saver&rdquo; utility. When you explicitly trigger tab stashing, the extension reads the URLs and titles of open tabs in your active window to save them into a local session list, then closes those tabs to free system memory. This data is never sent to any external server.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl border border-blueGray-200 bg-blueGray-50">
+            <span class="font-mono font-bold text-purple-700 text-xs uppercase px-2 py-0.5 rounded bg-purple-100 mr-2">alarms</span>
+            <p class="mt-2 text-blueGray-600">
+              <strong>Justification:</strong> Used to schedule periodic local clock updates, Pomodoro timer notifications, and cached weather forecast refreshes without running battery-draining continuous background threads.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl border border-blueGray-200 bg-blueGray-50">
+            <span class="font-mono font-bold text-purple-700 text-xs uppercase px-2 py-0.5 rounded bg-purple-100 mr-2">favicon</span>
+            <p class="mt-2 text-blueGray-600">
+              <strong>Justification:</strong> Used strictly to fetch and display small website icons alongside your stored bookmarks within your customizable bento dashboard.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. What We Do NOT Collect -->
+      <section class="space-y-3">
+        <h3 class="text-xl font-bold text-blueGray-900 tracking-tight">3. Information We Never Collect</h3>
+        <p>To eliminate ambiguity, we explicitly state that Fogo does <strong>NOT</strong> collect, record, or transmit:</p>
+        <ul class="list-disc pl-6 space-y-2 text-blueGray-600">
+          <li>Your internet browsing history or visited URLs outside of your explicit, locally stored Tab Stash sessions.</li>
+          <li>Your IP address, geolocation, or hardware machine identifiers.</li>
+          <li>Keystrokes, passwords, form entries, or cookie tokens.</li>
+          <li>Personal biometric, demographic, or profiling data.</li>
+        </ul>
+      </section>
+
+      <!-- 4. Third-Party Integrations & BYOK API Keys -->
+      <section class="space-y-3">
+        <h3 class="text-xl font-bold text-blueGray-900 tracking-tight">4. Third-Party APIs &amp; Bring-Your-Own-Key (BYOK)</h3>
+        <p>
+          Fogo includes optional integrations with external services to enrich your dashboard experience:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 text-blueGray-600">
+          <li><strong>Open-Meteo Weather Service:</strong> Weather forecasts are retrieved via non-authenticated HTTPS queries. Your broad approximate latitude/longitude is queried client-side without storing persistent location logs.</li>
+          <li><strong>Generative AI Providers (Gemini / OpenAI):</strong> If you choose to enable external AI copilot summaries, you provide your own personal API key. Your API key is stored strictly within your browser&rsquo;s local secure storage and queries are dispatched directly from your browser to Google or OpenAI endpoints using standard end-to-end HTTPS encryption. We do not operate an intermediary proxy server.</li>
+          <li><strong>Productivity Sync (Todoist / Notion):</strong> OAuth tokens or API keys provided for task synchronization are stored locally on your device and communicate directly with the official third-party APIs.</li>
+        </ul>
+      </section>
+
+      <!-- 5. Payment Information & Merchant of Record -->
+      <section class="space-y-3">
+        <h3 class="text-xl font-bold text-blueGray-900 tracking-tight">5. Payment Processing via Lemon Squeezy</h3>
+        <p>
+          Fogo Pro subscriptions ($9.99/year) are billed and processed by our authorized Merchant of Record, <strong>Lemon Squeezy LLC</strong>. 
+          When you purchase Fogo Pro, your financial information (including credit card numbers, billing address, and tax IDs) is collected directly by Lemon Squeezy and is subject to <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener noreferrer" class="text-purple-600 underline hover:text-purple-800">Lemon Squeezy&rsquo;s Privacy Policy</a>.
+        </p>
+        <p>
+          Dreainno never receives, handles, or stores your raw payment method or credit card numbers. We only receive a transaction confirmation, license activation status, and your email address for order fulfillment.
+        </p>
+      </section>
+
+      <!-- 6. GDPR and CCPA/CPRA Rights -->
+      <section class="space-y-3">
+        <h3 class="text-xl font-bold text-blueGray-900 tracking-tight">6. Rights Under GDPR &amp; CCPA/CPRA</h3>
+        <p>
+          Because Fogo retains your data locally on your device, you have immediate, autonomous control over your information at all times:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 text-blueGray-600">
+          <li><strong>Right of Access &amp; Portability:</strong> You may inspect and export all your saved notes, widgets, and preferences anytime directly within the Extension settings menu.</li>
+          <li><strong>Right to Erasure (Right to Be Forgotten):</strong> Clearing your browser&rsquo;s extension data or uninstalling Fogo immediately and permanently purges 100% of your stored preferences from your machine.</li>
+          <li><strong>Do Not Sell My Personal Information:</strong> We do not sell, rent, or barter consumer personal information to third parties, satisfying all CCPA requirements.</li>
+        </ul>
+      </section>
+
+      <!-- 7. Security of Your Data -->
+      <section class="space-y-3">
+        <h3 class="text-xl font-bold text-blueGray-900 tracking-tight">7. Data Security Architecture</h3>
+        <p>
+          We implement rigorous security best practices compliant with Chromium Manifest V3 specifications. Fogo uses zero dynamic code evaluation (<code class="font-mono text-xs bg-blueGray-100 px-1 py-0.5 rounded">eval()</code> is completely eliminated), enforces strict Content Security Policies (CSP), and routes all third-party requests over transport layer security (TLS/HTTPS).
+        </p>
+      </section>
+
+      <!-- 8. Contact Information -->
+      <section class="space-y-3 pt-6 border-t border-blueGray-200">
+        <h3 class="text-xl font-bold text-blueGray-900 tracking-tight">8. Contact Us &amp; Inquiries</h3>
+        <p>
+          If you have any questions, concerns, or requests regarding this Privacy Policy or our security practices, please contact our designated privacy team:
+        </p>
+        <div class="p-4 rounded-xl bg-blueGray-50 border border-blueGray-200 text-sm">
+          <p><strong>Dreainno — Fogo Legal Department</strong></p>
+          <p class="mt-1">Email: <a href="mailto:support@fogo-extension.com" class="text-purple-600 hover:underline">support@fogo-extension.com</a></p>
+          <p>Website: <a href="https://dreainno.website/" target="_blank" rel="noopener noreferrer" class="text-purple-600 hover:underline">https://dreainno.website</a></p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       4. Premium Deep Navy Footer (Matching Reference Layout & Style)
+       ========================================================================= -->
+  <footer class="relative bg-[#06082b] text-white pt-20 pb-12 border-t border-white/[0.08]">
+    <div class="container mx-auto px-6 sm:px-10 max-w-7xl">
+      
+      <!-- 4 Columns Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        
+        <!-- Column 1: Brand & Tagline & Socials -->
+        <div class="lg:col-span-5 pr-0 lg:pr-6">
+          <div class="flex items-center space-x-3 mb-5">
+            <img src="./assets/fogo-app.png" alt="Fogo Logo" class="w-9 h-9 rounded-xl object-contain shadow-lg shadow-purple-500/20" />
+            <span class="text-2xl font-black tracking-tight text-white">Fogo</span>
+          </div>
+          
+          <p class="text-[13.5px] text-[#93a1c8] leading-relaxed mb-7 max-w-sm font-normal">
+            Fogo is a calm, modular, and high-performance new tab dashboard dedicated to helping creators, developers, and professionals build calm, high-converting, distraction-free workspaces effortlessly.
+          </p>
+
+          <!-- Social Media Icons Row -->
+          <div class="flex items-center space-x-2.5">
+            <a href="https://github.com/dreainno" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="Author GitHub">
+              <i class="fab fa-github text-sm"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="YouTube">
+              <i class="fab fa-youtube text-xs"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="Instagram">
+              <i class="fab fa-instagram text-sm"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in text-xs"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="Facebook">
+              <i class="fab fa-facebook-f text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Product -->
+        <div class="lg:col-span-2 md:col-span-1">
+          <h5 class="text-[15px] font-bold text-white mb-5 tracking-tight">Product</h5>
+          <ul class="space-y-3.5 text-[13.5px] text-[#93a1c8]">
+            <li><a href="index.html#widgets" class="hover:text-white transition-colors">Key Features</a></li>
+            <li><a href="index.html#interactive-simulator" class="hover:text-white transition-colors">Live Demo Sandbox</a></li>
+            <li><a href="https://dreainno.lemonsqueezy.com/checkout/buy/89b739ee-a0da-4ef7-8b49-b06b0e121661" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 transition-colors font-semibold flex items-center gap-1.5"><i class="fas fa-crown text-[11px]"></i> Get Pro • $9.99/yr</a></li>
+            <li><a href="index.html#workspaces" class="hover:text-white transition-colors">Blog &amp; Guides</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/fogo/obbgfeoggkonopplfhageihbcaigcplk" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Chrome Web Store</a></li>
+            <li><a href="index.html#faq" class="hover:text-white transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company & Docs -->
+        <div class="lg:col-span-3 md:col-span-1">
+          <h5 class="text-[15px] font-bold text-white mb-5 tracking-tight">Company &amp; Docs</h5>
+          <ul class="space-y-3.5 text-[13.5px] text-[#93a1c8]">
+            <li><a href="index.html#workspaces" class="hover:text-white transition-colors">Publisher Masterclasses</a></li>
+            <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="index.html#workspaces" class="hover:text-white transition-colors">Documentation &amp; Guides</a></li>
+            <li><a href="https://dreainno.website/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Creator Studio (Dreainno)</a></li>
+            <li><a href="mailto:support@fogo-extension.com" class="hover:text-white transition-colors">Technical Support</a></li>
+            <li><a href="mailto:support@fogo-extension.com" class="hover:text-white transition-colors">Contact Developer</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Legal & Trust -->
+        <div class="lg:col-span-2 md:col-span-1">
+          <h5 class="text-[15px] font-bold text-white mb-5 tracking-tight">Legal &amp; Trust</h5>
+          <ul class="space-y-3.5 text-[13.5px] text-[#93a1c8]">
+            <li><a href="terms-of-service.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="privacy-policy.html" class="text-white font-medium transition-colors">Privacy Policy</a></li>
+            <li><a href="refund-policy.html" class="hover:text-white transition-colors">Refund Policy (14 Days)</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/[0.08] mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#7d8bb2]">
+        <div>
+          © 2026 Fogo. Built by <span class="text-white font-semibold">Dreainno</span>. Custom-developed for Google Chrome.
+        </div>
+        
+        <div class="flex items-center text-[#93a1c8] text-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block mr-2 shadow-[0_0_8px_#34d399]"></span>
+          <span>Chrome Web Store Verified • Lemon Squeezy 100% Secure Checkout</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

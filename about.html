@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>About Fogo — The Best Productivity Chrome Extension &amp; New Tab Dashboard | Dreainno</title>
+  <meta name="description" content="Learn about Fogo, the best productivity Chrome extension and calm new tab dashboard designed by Dreainno Studio. Built on local-first engineering, Manifest V3, and distraction-free deep work." />
+  <meta name="keywords" content="about fogo, best productivity chrome extension, productivity chrome plugin, chrome dashboard, Dreainno studio, local-first productivity" />
+  <meta name="author" content="Dreainno" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dreainno.website/about.html" />
+  <link rel="alternate" type="text/markdown" href="llms.txt" title="LLM Information Architecture" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://dreainno.website/about.html" />
+  <meta property="og:title" content="About Fogo — The Best Productivity Chrome Extension &amp; New Tab Dashboard" />
+  <meta property="og:description" content="Discover the story and engineering behind Fogo, the local-first productivity Chrome extension crafted by Dreainno." />
+  <meta property="og:image" content="https://dreainno.website/assets/fogo-app.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/fogo-app.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blueGray: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom Fogo Notus Theme Styles -->
+  <link rel="stylesheet" href="./assets/css/fogo-theme.css" />
+</head>
+<body class="text-blueGray-700 antialiased bg-blueGray-50 selection:bg-purple-500 selection:text-white flex flex-col min-h-screen">
+
+  <!-- =========================================================================
+       1. Top Fixed Navigation Bar
+       ========================================================================= -->
+  <nav class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-3 py-3 navbar-expand-lg bg-white/95 backdrop-blur shadow-md transition-all duration-200">
+    <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+        <a class="text-blueGray-800 text-base font-bold leading-relaxed inline-flex items-center mr-4 py-1 whitespace-nowrap" href="index.html">
+          <img src="./assets/fogo-app.png" alt="Fogo Logo" class="w-8 h-8 rounded-lg object-contain shadow-md shadow-purple-500/20 mr-2.5" />
+          <span class="tracking-tight text-xl font-extrabold bg-gradient-to-r from-purple-700 via-indigo-700 to-pink-600 bg-clip-text text-transparent">Fogo</span>
+          <span class="ml-2 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 border border-purple-200 hidden sm:inline-block">Chrome Extension</span>
+        </a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none text-blueGray-700 hover:text-purple-600 transition-colors" type="button" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Nav Menu Links -->
+      <div class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none hidden" id="desktop-menu">
+        <ul class="flex flex-col lg:flex-row list-none mr-auto">
+          <li class="flex items-center">
+            <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="index.html#workspaces">
+              <i class="fas fa-desktop text-purple-500 text-sm mr-2"></i> Workspaces
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="index.html#ai-briefing">
+              <i class="fas fa-wand-magic-sparkles text-purple-500 text-sm mr-2"></i> AI Copilot
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="index.html#themes">
+              <i class="fas fa-palette text-purple-500 text-sm mr-2"></i> 22 Themes
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="index.html#soundscapes">
+              <i class="fas fa-headphones text-purple-500 text-sm mr-2"></i> Soundscapes
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="index.html#widgets">
+              <i class="fas fa-cubes text-purple-500 text-sm mr-2"></i> Bento Widgets
+            </a>
+          </li>
+        </ul>
+
+        <!-- Right Side CTAs -->
+        <ul class="flex flex-col lg:flex-row list-none lg:ml-auto items-center space-x-2.5">
+          <li class="flex items-center">
+            <a href="https://chromewebstore.google.com/detail/fogo/obbgfeoggkonopplfhageihbcaigcplk" target="_blank" rel="noopener noreferrer" class="bg-blueGray-100 hover:bg-blueGray-200 text-blueGray-800 text-xs font-bold uppercase px-3.5 py-2 rounded-xl transition-all inline-flex items-center gap-2 cursor-pointer shadow-sm border border-blueGray-200">
+              <i class="fab fa-chrome text-sm text-purple-600"></i> Add to Chrome
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a href="https://dreainno.lemonsqueezy.com/checkout/buy/89b739ee-a0da-4ef7-8b49-b06b0e121661" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white active:from-purple-700 active:to-indigo-700 text-xs font-bold uppercase px-4 py-2 rounded-xl shadow-md hover:shadow-lg hover:shadow-purple-500/20 outline-none focus:outline-none ease-linear transition-all duration-150 inline-flex items-center gap-1.5 cursor-pointer">
+              <i class="fas fa-crown text-amber-300 text-xs"></i> Get Pro • $9.99/yr
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden w-full lg:hidden bg-white border-t border-blueGray-200 mt-2 px-4 py-3">
+      <ul class="flex flex-col space-y-2 text-sm font-semibold">
+        <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="index.html#workspaces"><i class="fas fa-desktop mr-2 text-purple-500"></i> Workspaces</a></li>
+        <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="index.html#ai-briefing"><i class="fas fa-wand-magic-sparkles mr-2 text-purple-500"></i> AI Copilot</a></li>
+        <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="index.html#themes"><i class="fas fa-palette mr-2 text-purple-500"></i> 22 Themes</a></li>
+        <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="index.html#soundscapes"><i class="fas fa-headphones mr-2 text-purple-500"></i> Soundscapes</a></li>
+        <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="index.html#widgets"><i class="fas fa-cubes mr-2 text-purple-500"></i> Bento Widgets</a></li>
+        <li class="pt-2 border-t border-blueGray-100 flex flex-col gap-2">
+          <a href="https://chromewebstore.google.com/detail/fogo/obbgfeoggkonopplfhageihbcaigcplk" target="_blank" rel="noopener noreferrer" class="w-full text-center block bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg shadow">
+            <i class="fab fa-chrome mr-2"></i> Add to Chrome — Free
+          </a>
+          <a href="https://dreainno.lemonsqueezy.com/checkout/buy/89b739ee-a0da-4ef7-8b49-b06b0e121661" target="_blank" rel="noopener noreferrer" class="w-full text-center block bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg shadow">
+            <i class="fas fa-crown mr-2"></i> Get Pro • $9.99/yr
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       2. Hero Header
+       ========================================================================= -->
+  <header class="relative pt-32 pb-16 bg-gradient-to-b from-purple-950 via-blueGray-900 to-blueGray-900 text-white">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-300 text-xs font-mono mb-4">
+        <i class="fas fa-sparkles"></i> The Creator Studio Story
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
+        About Fogo &amp; Dreainno
+      </h1>
+      <p class="text-blueGray-300 text-sm sm:text-base max-w-2xl mx-auto">
+        Crafting intentional, high-performance software for mindful digital workspaces.
+      </p>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       3. About Us Content
+       ========================================================================= -->
+  <main class="flex-grow py-16 bg-white">
+    <div class="container mx-auto px-6 max-w-4xl text-blueGray-700 text-sm sm:text-base leading-relaxed space-y-12">
+
+      <!-- Mission Statement Hero Card -->
+      <div class="p-8 rounded-3xl bg-gradient-to-br from-blueGray-900 via-indigo-950 to-purple-950 text-white shadow-xl border border-purple-500/30 relative overflow-hidden">
+        <div class="relative z-10">
+          <span class="text-xs uppercase tracking-widest font-mono text-purple-300 font-bold block mb-2">Our Mission</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-4 leading-snug">
+            We believe your new tab should inspire calm intention, not digital chaos.
+          </h2>
+          <p class="text-blueGray-300 text-sm leading-relaxed font-light">
+            Every day, knowledge workers, creators, and developers open over 150 new browser tabs. Most new tab extensions clutter this sacred space with clickbait articles, intrusive telemetry, and heavy background scripts that slow down your computer. We built Fogo to reclaim that moment for tranquility, clarity, and deep focus.
+          </p>
+        </div>
+      </div>
+
+      <!-- Origin Story -->
+      <section class="space-y-4">
+        <h3 class="text-2xl font-bold text-blueGray-900 tracking-tight">The Origin of Fogo</h3>
+        <p>
+          Fogo was conceived at <strong>Dreainno</strong> out of personal frustration with the bloated state of productivity tools. As digital creators and engineers, our team noticed how the simple act of opening a tab often triggered immediate cognitive overload: 40 open tabs fighting for memory, disorganized bookmarks, and disjointed to-do lists scattered across multiple apps.
+        </p>
+        <p>
+          We asked ourselves: <em>What if your new tab dashboard felt like an executive morning briefing at an architect&rsquo;s desk?</em> Fast, minimal, visually inspiring, and respectful of your computer&rsquo;s resources. That question gave birth to Fogo.
+        </p>
+      </section>
+
+      <!-- Three Pillars of Engineering -->
+      <section class="space-y-6">
+        <h3 class="text-2xl font-bold text-blueGray-900 tracking-tight">Our Core Engineering Pillars</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-blueGray-50 border border-blueGray-200">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl mb-4 shadow-sm">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h4 class="text-lg font-bold text-blueGray-900 mb-2">Extreme Performance</h4>
+            <p class="text-xs text-blueGray-600 leading-relaxed">
+              Engineered with native Chromium Manifest V3 APIs and hardware-accelerated CSS. Sub-millisecond cold starts, 60 FPS animations, and instant RAM stashing.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-blueGray-50 border border-blueGray-200">
+            <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl mb-4 shadow-sm">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h4 class="text-lg font-bold text-blueGray-900 mb-2">Radical Privacy</h4>
+            <p class="text-xs text-blueGray-600 leading-relaxed">
+              Local-first data architecture. We do not track, sell, or analyze your browsing data. Your notes, bookmarks, and preferences never leave your device.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-blueGray-50 border border-blueGray-200">
+            <div class="w-12 h-12 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center text-xl mb-4 shadow-sm">
+              <i class="fas fa-paint-roller"></i>
+            </div>
+            <h4 class="text-lg font-bold text-blueGray-900 mb-2">Aesthetic Serenity</h4>
+            <p class="text-xs text-blueGray-600 leading-relaxed">
+              22 curated visual themes, 11 hero clock styles, and Web Audio acoustic focus soundscapes designed to induce flow states and reduce visual fatigue.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transparent Business Model -->
+      <section class="space-y-4">
+        <h3 class="text-2xl font-bold text-blueGray-900 tracking-tight">Our Business Model: Simple &amp; Honest</h3>
+        <p>
+          Many free software products monetize by covertly selling user browsing trends or injecting sponsored affiliate links into search results. <strong>We strictly reject that model.</strong>
+        </p>
+        <p>
+          Instead, Fogo operates on an honest, transparent pricing structure:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 text-blueGray-600 text-sm">
+          <li><strong>Fogo Free Edition:</strong> 100% free forever for all core productivity modules, local tasks, clock presets, and curated aesthetic themes.</li>
+          <li><strong>Fogo Pro ($9.99/year):</strong> An affordable annual pass for professionals who want advanced AI morning briefings, unlimited tab stash sessions, and continuous feature upgrades.</li>
+        </ul>
+        <p>
+          This straightforward model aligns our incentives directly with you: our only goal is to build software you genuinely love using every day.
+        </p>
+      </section>
+
+      <!-- About Dreainno & Contact -->
+      <section class="space-y-4 pt-6 border-t border-blueGray-200">
+        <h3 class="text-2xl font-bold text-blueGray-900 tracking-tight">About Dreainno Studio</h3>
+        <p>
+          <strong>Dreainno</strong> is an independent software and digital design studio dedicated to building high-converting, deeply functional, and beautifully architected web tools for modern creators. 
+          Beyond Fogo, we build software solutions that empower creators, bloggers, and online publishers to perform at their peak.
+        </p>
+        <div class="p-6 rounded-2xl bg-purple-50 border border-purple-200 text-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <h4 class="font-bold text-purple-950 text-base">Have Feedback or Feature Ideas?</h4>
+            <p class="text-xs text-purple-800 mt-1">We read and respond to every developer message personally.</p>
+          </div>
+          <a href="mailto:support@fogo-extension.com" class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs uppercase tracking-wider shadow transition-all whitespace-nowrap">
+            <i class="fas fa-envelope mr-1.5"></i> Contact Founder
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       4. Premium Deep Navy Footer (Matching Reference Layout & Style)
+       ========================================================================= -->
+  <footer class="relative bg-[#06082b] text-white pt-20 pb-12 border-t border-white/[0.08]">
+    <div class="container mx-auto px-6 sm:px-10 max-w-7xl">
+      
+      <!-- 4 Columns Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        
+        <!-- Column 1: Brand & Tagline & Socials -->
+        <div class="lg:col-span-5 pr-0 lg:pr-6">
+          <div class="flex items-center space-x-3 mb-5">
+            <img src="./assets/fogo-app.png" alt="Fogo Logo" class="w-9 h-9 rounded-xl object-contain shadow-lg shadow-purple-500/20" />
+            <span class="text-2xl font-black tracking-tight text-white">Fogo</span>
+          </div>
+          
+          <p class="text-[13.5px] text-[#93a1c8] leading-relaxed mb-7 max-w-sm font-normal">
+            Fogo is a calm, modular, and high-performance new tab dashboard dedicated to helping creators, developers, and professionals build calm, high-converting, distraction-free workspaces effortlessly.
+          </p>
+
+          <!-- Social Media Icons Row -->
+          <div class="flex items-center space-x-2.5">
+            <a href="https://github.com/dreainno" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="Author GitHub">
+              <i class="fab fa-github text-sm"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="YouTube">
+              <i class="fab fa-youtube text-xs"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="Instagram">
+              <i class="fab fa-instagram text-sm"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in text-xs"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="Facebook">
+              <i class="fab fa-facebook-f text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Product -->
+        <div class="lg:col-span-2 md:col-span-1">
+          <h5 class="text-[15px] font-bold text-white mb-5 tracking-tight">Product</h5>
+          <ul class="space-y-3.5 text-[13.5px] text-[#93a1c8]">
+            <li><a href="index.html#widgets" class="hover:text-white transition-colors">Key Features</a></li>
+            <li><a href="index.html#interactive-simulator" class="hover:text-white transition-colors">Live Demo Sandbox</a></li>
+            <li><a href="https://dreainno.lemonsqueezy.com/checkout/buy/89b739ee-a0da-4ef7-8b49-b06b0e121661" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 transition-colors font-semibold flex items-center gap-1.5"><i class="fas fa-crown text-[11px]"></i> Get Pro • $9.99/yr</a></li>
+            <li><a href="index.html#workspaces" class="hover:text-white transition-colors">Blog &amp; Guides</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/fogo/obbgfeoggkonopplfhageihbcaigcplk" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Chrome Web Store</a></li>
+            <li><a href="index.html#faq" class="hover:text-white transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company & Docs -->
+        <div class="lg:col-span-3 md:col-span-1">
+          <h5 class="text-[15px] font-bold text-white mb-5 tracking-tight">Company &amp; Docs</h5>
+          <ul class="space-y-3.5 text-[13.5px] text-[#93a1c8]">
+            <li><a href="index.html#workspaces" class="hover:text-white transition-colors">Publisher Masterclasses</a></li>
+            <li><a href="about.html" class="text-white font-medium transition-colors">About Us</a></li>
+            <li><a href="index.html#workspaces" class="hover:text-white transition-colors">Documentation &amp; Guides</a></li>
+            <li><a href="https://dreainno.website/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Creator Studio (Dreainno)</a></li>
+            <li><a href="mailto:support@fogo-extension.com" class="hover:text-white transition-colors">Technical Support</a></li>
+            <li><a href="mailto:support@fogo-extension.com" class="hover:text-white transition-colors">Contact Developer</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Legal & Trust -->
+        <div class="lg:col-span-2 md:col-span-1">
+          <h5 class="text-[15px] font-bold text-white mb-5 tracking-tight">Legal &amp; Trust</h5>
+          <ul class="space-y-3.5 text-[13.5px] text-[#93a1c8]">
+            <li><a href="terms-of-service.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="refund-policy.html" class="hover:text-white transition-colors">Refund Policy (14 Days)</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/[0.08] mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#7d8bb2]">
+        <div>
+          © 2026 Fogo. Built by <span class="text-white font-semibold">Dreainno</span>. Custom-developed for Google Chrome.
+        </div>
+        
+        <div class="flex items-center text-[#93a1c8] text-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block mr-2 shadow-[0_0_8px_#34d399]"></span>
+          <span>Chrome Web Store Verified • Lemon Squeezy 100% Secure Checkout</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

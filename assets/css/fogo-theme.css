@@ -1,0 +1,488 @@
+/* ==========================================================================
+   Fogo — The Calm, Modular & Intelligent Productivity Dashboard
+   Theme Stylesheet & Notus Tailwind Extension
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Default Fogo Purple (Obsidian Dark) */
+  --fogo-primary: #8b5cf6;
+  --fogo-primary-rgb: 139, 92, 246;
+  --fogo-primary-light: #a78bfa;
+  --fogo-primary-dark: #6d28d9;
+  --fogo-accent: #06b6d4;
+  --fogo-accent-rgb: 6, 182, 212;
+  
+  --fogo-bg-dark: #090d16;
+  --fogo-bg-card: rgba(15, 23, 42, 0.75);
+  --fogo-border: rgba(255, 255, 255, 0.08);
+  --fogo-border-highlight: rgba(139, 92, 246, 0.3);
+  --fogo-glow: 0 8px 32px 0 rgba(139, 92, 246, 0.25);
+  
+  --fogo-font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --fogo-font-heading: 'Plus Jakarta Sans', sans-serif;
+  --fogo-font-mono: 'JetBrains Mono', monospace;
+}
+
+/* -------------------------------------------------------------
+   Custom Theme Definitions (for the 22 Curated Fogo Themes)
+   ------------------------------------------------------------- */
+
+/* 1. Obsidian Dark (Default) */
+[data-theme="obsidian-dark"] {
+  --theme-accent: #8b5cf6;
+  --theme-accent-rgb: 139, 92, 246;
+  --theme-font: 'Plus Jakarta Sans', sans-serif;
+  --theme-bg: #090d16;
+  --theme-card: rgba(18, 24, 38, 0.85);
+  --theme-border: rgba(139, 92, 246, 0.25);
+  --theme-badge-bg: rgba(139, 92, 246, 0.15);
+}
+
+/* 2. Nordic Glacier */
+[data-theme="nordic-glacier"] {
+  --theme-accent: #38bdf8;
+  --theme-accent-rgb: 56, 189, 248;
+  --theme-font: 'Space Grotesk', sans-serif;
+  --theme-bg: #07131e;
+  --theme-card: rgba(12, 31, 48, 0.85);
+  --theme-border: rgba(56, 189, 248, 0.3);
+  --theme-badge-bg: rgba(56, 189, 248, 0.15);
+}
+
+/* 3. Cyberpunk 2077 */
+[data-theme="cyberpunk-2077"] {
+  --theme-accent: #00f0ff;
+  --theme-accent-rgb: 0, 240, 255;
+  --theme-font: 'JetBrains Mono', monospace;
+  --theme-bg: #050508;
+  --theme-card: rgba(16, 12, 28, 0.9);
+  --theme-border: rgba(254, 231, 21, 0.4);
+  --theme-badge-bg: rgba(0, 240, 255, 0.2);
+}
+
+/* 4. Emerald Luxury */
+[data-theme="emerald-luxury"] {
+  --theme-accent: #10b981;
+  --theme-accent-rgb: 16, 185, 129;
+  --theme-font: 'Cinzel', serif;
+  --theme-bg: #05140d;
+  --theme-card: rgba(6, 32, 20, 0.85);
+  --theme-border: rgba(16, 185, 129, 0.3);
+  --theme-badge-bg: rgba(16, 185, 129, 0.15);
+}
+
+/* 5. Amber Sunset */
+[data-theme="amber-sunset"] {
+  --theme-accent: #f59e0b;
+  --theme-accent-rgb: 245, 158, 11;
+  --theme-font: 'Outfit', sans-serif;
+  --theme-bg: #140b04;
+  --theme-card: rgba(36, 18, 8, 0.85);
+  --theme-border: rgba(245, 158, 11, 0.3);
+  --theme-badge-bg: rgba(245, 158, 11, 0.15);
+}
+
+/* 6. Tokyo Lo-Fi */
+[data-theme="tokyo-lo-fi"] {
+  --theme-accent: #a78bfa;
+  --theme-accent-rgb: 167, 139, 250;
+  --theme-font: 'Plus Jakarta Sans', sans-serif;
+  --theme-bg: #110d1f;
+  --theme-card: rgba(27, 20, 48, 0.85);
+  --theme-border: rgba(167, 139, 250, 0.3);
+  --theme-badge-bg: rgba(167, 139, 250, 0.15);
+}
+
+/* 7. Deep Cosmos */
+[data-theme="deep-cosmos"] {
+  --theme-accent: #c084fc;
+  --theme-accent-rgb: 192, 132, 252;
+  --theme-font: 'Space Grotesk', sans-serif;
+  --theme-bg: #090514;
+  --theme-card: rgba(20, 10, 36, 0.88);
+  --theme-border: rgba(192, 132, 252, 0.3);
+  --theme-badge-bg: rgba(192, 132, 252, 0.15);
+}
+
+/* 8. Retro Synthwave */
+[data-theme="retro-synthwave"] {
+  --theme-accent: #f43f5e;
+  --theme-accent-rgb: 244, 63, 94;
+  --theme-font: 'JetBrains Mono', monospace;
+  --theme-bg: #12031a;
+  --theme-card: rgba(35, 8, 48, 0.88);
+  --theme-border: rgba(244, 63, 94, 0.35);
+  --theme-badge-bg: rgba(244, 63, 94, 0.15);
+}
+
+/* 9. Zen Bamboo */
+[data-theme="zen-bamboo"] {
+  --theme-accent: #4ade80;
+  --theme-accent-rgb: 74, 222, 128;
+  --theme-font: 'Cinzel', serif;
+  --theme-bg: #09130c;
+  --theme-card: rgba(14, 31, 20, 0.85);
+  --theme-border: rgba(74, 222, 128, 0.3);
+  --theme-badge-bg: rgba(74, 222, 128, 0.15);
+}
+
+/* 10. Monochrome Clean */
+[data-theme="monochrome-clean"] {
+  --theme-accent: #ffffff;
+  --theme-accent-rgb: 255, 255, 255;
+  --theme-font: 'Space Grotesk', sans-serif;
+  --theme-bg: #000000;
+  --theme-card: rgba(20, 20, 20, 0.9);
+  --theme-border: rgba(255, 255, 255, 0.2);
+  --theme-badge-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* 11. Developer Studio */
+[data-theme="developer-studio"] {
+  --theme-accent: #22c55e;
+  --theme-accent-rgb: 34, 197, 94;
+  --theme-font: 'JetBrains Mono', monospace;
+  --theme-bg: #0c100d;
+  --theme-card: rgba(14, 22, 17, 0.9);
+  --theme-border: rgba(34, 197, 94, 0.3);
+  --theme-badge-bg: rgba(34, 197, 94, 0.15);
+}
+
+/* 12. Carbon Stealth */
+[data-theme="carbon-stealth"] {
+  --theme-accent: #ef4444;
+  --theme-accent-rgb: 239, 68, 68;
+  --theme-font: 'JetBrains Mono', monospace;
+  --theme-bg: #0d0d0f;
+  --theme-card: rgba(22, 22, 26, 0.92);
+  --theme-border: rgba(239, 68, 68, 0.35);
+  --theme-badge-bg: rgba(239, 68, 68, 0.15);
+}
+
+/* Base Body Styling */
+body {
+  font-family: var(--fogo-font-body);
+  background-color: #f8fafc;
+  color: #334155;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Notus BlueGray Utilities */
+.bg-blueGray-50 { background-color: #f8fafc; }
+.bg-blueGray-100 { background-color: #f1f5f9; }
+.bg-blueGray-200 { background-color: #e2e8f0; }
+.bg-blueGray-300 { background-color: #cbd5e1; }
+.bg-blueGray-400 { background-color: #94a3b8; }
+.bg-blueGray-500 { background-color: #64748b; }
+.bg-blueGray-600 { background-color: #475569; }
+.bg-blueGray-700 { background-color: #334155; }
+.bg-blueGray-800 { background-color: #1e293b; }
+.bg-blueGray-900 { background-color: #0f172a; }
+
+.text-blueGray-300 { color: #cbd5e1; }
+.text-blueGray-400 { color: #94a3b8; }
+.text-blueGray-500 { color: #64748b; }
+.text-blueGray-600 { color: #475569; }
+.text-blueGray-700 { color: #334155; }
+.text-blueGray-800 { color: #1e293b; }
+.text-blueGray-900 { color: #0f172a; }
+
+.border-blueGray-100 { border-color: #f1f5f9; }
+.border-blueGray-200 { border-color: #e2e8f0; }
+.border-blueGray-300 { border-color: #cbd5e1; }
+.border-blueGray-700 { border-color: #334155; }
+
+/* Custom Fogo Glassmorphism */
+.fogo-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.fogo-glass-dark {
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fogo-glass-card {
+  background: var(--theme-card, rgba(18, 24, 38, 0.85));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--theme-border, rgba(139, 92, 246, 0.25));
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fogo-glass-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--theme-accent, #8b5cf6);
+  box-shadow: 0 12px 30px -10px rgba(var(--theme-accent-rgb, 139, 92, 246), 0.25);
+}
+
+/* Polygons & Slanted Dividers (Notus signature style) */
+.polygon-divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 80px;
+  pointer-events: none;
+  overflow: hidden;
+  transform: translateY(-99%);
+}
+
+.polygon-divider svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* -------------------------------------------------------------
+   11 Hero Clock Styles Preview Classes
+   ------------------------------------------------------------- */
+
+/* Style 1: Modern Minimal */
+.clock-modern-minimal {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+.clock-colon-pulse {
+  animation: colonBlink 1s infinite;
+}
+@keyframes colonBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* Style 2: Retro Flip */
+.clock-retro-flip .flip-digit {
+  background: #18181b;
+  border-radius: 8px;
+  padding: 6px 12px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid #27272a;
+}
+.clock-retro-flip .flip-digit::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Style 3: Cyber HUD */
+.clock-cyber-hud {
+  font-family: 'JetBrains Mono', monospace;
+  color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.6), 0 0 20px rgba(0, 240, 255, 0.3);
+  letter-spacing: 0.1em;
+}
+
+/* Style 4: Editorial Luxe */
+.clock-editorial-luxe {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: #fef08a;
+  text-shadow: 0 2px 10px rgba(234, 179, 8, 0.3);
+}
+
+/* Style 5: Synth Neon */
+.clock-synth-neon {
+  font-family: 'JetBrains Mono', monospace;
+  color: #f43f5e;
+  text-shadow: 0 0 8px #f43f5e, 0 0 20px #e11d48, 0 0 40px #be123c;
+}
+
+/* Style 6: Fashion Stack */
+.clock-fashion-stack {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 900;
+  line-height: 0.85;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+}
+
+/* Style 7: Glass Capsule */
+.clock-glass-capsule {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: 8px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Style 8: Nixie Tube */
+.clock-nixie-tube {
+  font-family: 'Space Grotesk', monospace;
+  color: #ff7700;
+  text-shadow: 0 0 8px rgba(255, 119, 0, 0.9), 0 0 18px rgba(255, 60, 0, 0.7), 0 0 30px rgba(255, 30, 0, 0.4);
+  background: rgba(30, 10, 0, 0.6);
+  border-radius: 8px;
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 100, 0, 0.3);
+}
+
+/* Style 9: Matrix Code */
+.clock-matrix-code {
+  font-family: 'JetBrains Mono', monospace;
+  color: #22c55e;
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.8), 0 0 16px rgba(34, 197, 94, 0.4);
+}
+
+/* Style 10: Aurora Gradient */
+.clock-aurora-gradient {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  background: linear-gradient(135deg, #38bdf8 0%, #c084fc 50%, #fb7185 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Style 11: Swiss Luxury Dial (Analog) */
+.swiss-dial-face {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1e293b 0%, #0f172a 100%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.8), 0 4px 15px rgba(0,0,0,0.4);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dial-center-pin {
+  width: 8px;
+  height: 8px;
+  background: #f8fafc;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+.dial-hand {
+  position: absolute;
+  transform-origin: bottom center;
+  bottom: 50%;
+  left: calc(50% - 1px);
+  border-radius: 2px;
+}
+.dial-hour-hand {
+  width: 3px;
+  height: 28px;
+  background: #f1f5f9;
+  z-index: 6;
+}
+.dial-min-hand {
+  width: 2px;
+  height: 40px;
+  background: #cbd5e1;
+  z-index: 7;
+}
+.dial-sec-hand {
+  width: 1px;
+  height: 44px;
+  background: #ef4444;
+  z-index: 8;
+}
+
+/* -------------------------------------------------------------
+   Interactive Simulator Widgets & Micro-Animations
+   ------------------------------------------------------------- */
+
+/* Vinyl Disc Spin Animation */
+@keyframes vinylSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.vinyl-spinning {
+  animation: vinylSpin 6s linear infinite;
+}
+
+/* Sound Equalizer Bars */
+.eq-bar {
+  width: 3px;
+  background-color: var(--theme-accent, #8b5cf6);
+  border-radius: 2px;
+  animation: eqBounce 1.2s ease-in-out infinite alternate;
+}
+.eq-bar:nth-child(1) { height: 16px; animation-delay: 0.1s; }
+.eq-bar:nth-child(2) { height: 26px; animation-delay: 0.3s; }
+.eq-bar:nth-child(3) { height: 12px; animation-delay: 0.2s; }
+.eq-bar:nth-child(4) { height: 22px; animation-delay: 0.5s; }
+.eq-bar:nth-child(5) { height: 8px; animation-delay: 0.4s; }
+
+@keyframes eqBounce {
+  0% { height: 6px; }
+  100% { height: 24px; }
+}
+
+/* Custom Range Input */
+input[type="range"] {
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  height: 6px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--theme-accent, #8b5cf6);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(var(--theme-accent-rgb, 139, 92, 246), 0.5);
+  border: 2px solid #ffffff;
+  transition: transform 0.1s;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Perspective 3D Container for Dashboard Mockup */
+.mockup-perspective {
+  perspective: 1200px;
+}
+.mockup-tilted {
+  transform: rotateX(8deg) rotateY(-4deg) rotateZ(1deg);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s;
+  box-shadow: -20px 30px 60px -15px rgba(0, 0, 0, 0.5), 0 0 40px rgba(139, 92, 246, 0.15);
+}
+.mockup-tilted:hover {
+  transform: rotateX(2deg) rotateY(-1deg) rotateZ(0deg) translateY(-8px);
+  box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.6), 0 0 60px rgba(139, 92, 246, 0.25);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
