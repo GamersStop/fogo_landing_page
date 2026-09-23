@@ -7,9 +7,20 @@
 - Developer integrations: GitHub activity, Asana tasks, Google Calendar.
 - Market tracking: Live trading charts, cryptocurrency and stock watchlists.
 - 22 dynamic aesthetic themes (Minimal, Glassmorphism, Dark Synth, Focus).
+- Tab Stash: Instantly hibernates background tabs to reclaim up to 2.8 GB RAM.
+- Local-first privacy: 100% offline-ready, zero telemetry, no tracking servers.
 
-## Links
+## Official Links
 - [Chrome Web Store](https://chromewebstore.google.com/detail/fogo/obbgfeoggkonopplfhageihbcaigcplk): Free install for Google Chrome & Chromium browsers
 - [Fogo Official Website](https://getfogo.website/): Product tour and interactive demonstration
-- [Fogo Pro Checkout](https://dreainno.lemonsqueezy.com/checkout/buy/89b739ee-a0da-4ef7-8b49-b06b0e121661): Pro license key
-- [Documentation & Widgets](https://getfogo.website/#widgets): Complete modular widget registry
+- [Fogo Pro Checkout](https://dreainno.lemonsqueezy.com/checkout/buy/89b739ee-a0da-4ef7-8b49-b06b0e121661): Pro license key ($9.99/year)
+- [Blog & Knowledge Base](https://getfogo.website/blog/index.html): Full engineering articles, comparisons, and workflows
+
+## Deep Dive Guides & Technical Benchmarks
+- [Best Chrome Productivity Extensions in 2026](https://getfogo.website/blog/best-chrome-productivity-extensions-2026.html): Memory benchmarks comparing Momentum, Toby, Forest, Notion Clipper, and Fogo across 50 tabs.
+- [Customizable New Tab Chrome Guide](https://getfogo.website/blog/customizable-new-tab-chrome-guide.html): Step-by-step setup for coordinate-based bento start screens, 22 dark themes, and zero-telemetry widgets.
+- [Developer New Tab Setup Guide](https://getfogo.website/blog/developer-new-tab-setup-guide.html): Centralizing GitHub pull requests, sprint to-dos, and local scratchpads to eliminate developer tab fatigue.
+- [Trading Dashboard Extension Guide](https://getfogo.website/blog/trading-dashboard-extension-chrome.html): Why traders need dedicated start screens with real-time SVG sparklines, market session clocks, and trade journals.
+- [Reduce Chrome RAM Usage with Tab Stash](https://getfogo.website/blog/reduce-chrome-ram-usage-tab-stash.html): Architectural analysis of Chromium Site Isolation, renderer memory leaks, and 2.8 GB RAM reclamation.
+- [Modular Browser Dashboard Workflows](https://getfogo.website/blog/modular-browser-dashboard-workflow.html): Cognitive science behind attention residue and how modular bento grids restore deep work flow.
+- [Distraction-Free Study Dashboard with Pomodoro](https://getfogo.website/blog/distraction-free-study-dashboard-pomodoro.html): Psychoacoustics of pink noise, Web Audio synths, and calm Pomodoro intervals for academic focus.

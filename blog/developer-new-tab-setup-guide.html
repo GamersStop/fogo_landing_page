@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DRQVB840K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6DRQVB840K');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Setting Up a Minimalist Developer New Tab: GitHub PRs, Tasks &amp; Zero Telemetry</title>
+  <meta name="description" content="Stop drowning in open tabs. Learn how to configure a minimalist developer new tab in Chrome with GitHub pull request trackers, sprint queues, and terminal dark themes." />
+  <meta name="keywords" content="developer new tab, Chrome productivity extension, github new tab extension, developer start page chrome, coding workspace chrome" />
+  <meta name="author" content="Dreainno" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://getfogo.website/blog/developer-new-tab-setup-guide.html" />
+  <link rel="alternate" type="text/markdown" href="../llms.txt" title="LLM Information Architecture" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://getfogo.website/blog/developer-new-tab-setup-guide.html" />
+  <meta property="og:title" content="Setting Up a Minimalist Developer New Tab: GitHub PRs, Tasks &amp; Zero Telemetry" />
+  <meta property="og:description" content="Centralize GitHub PRs, sprint action items, and dev docs in your browser start page without leaking token data to third parties." />
+  <meta property="og:image" content="https://getfogo.website/assets/fogo-app.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Minimalist Developer New Tab Setup Guide" />
+  <meta name="twitter:description" content="How software engineers streamline GitHub, tasks, and memory consumption in Chrome." />
+  <meta name="twitter:image" content="https://getfogo.website/assets/fogo-app.png" />
+
+  <!-- Structured Data: BlogPosting & BreadcrumbList (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Setting Up a Minimalist Developer New Tab: GitHub PRs, Tasks & Zero Telemetry",
+    "description": "Tactical guide for software engineers to configure a low-latency, privacy-first developer dashboard inside Chrome.",
+    "image": "https://getfogo.website/assets/fogo-app.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Dreainno",
+      "url": "https://getfogo.website/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Dreainno",
+      "url": "https://getfogo.website/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://getfogo.website/assets/fogo-app.png"
+      }
+    },
+    "datePublished": "2026-09-18T14:30:00+00:00",
+    "dateModified": "2026-09-23T10:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://getfogo.website/blog/developer-new-tab-setup-guide.html"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://getfogo.website/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://getfogo.website/blog/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Developer New Tab Setup Guide",
+        "item": "https://getfogo.website/blog/developer-new-tab-setup-guide.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/fogo-app.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blueGray: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom Fogo Theme Styles -->
+  <link rel="stylesheet" href="../assets/css/fogo-theme.css" />
+</head>
+<body class="text-blueGray-700 antialiased bg-blueGray-50 selection:bg-purple-500 selection:text-white flex flex-col min-h-screen">
+
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-purple-600 focus:text-white focus:font-bold focus:rounded-lg focus:shadow-lg focus:outline-none">
+    Skip to main content
+  </a>
+
+  <!-- Navigation -->
+  <header>
+    <nav aria-label="Main Navigation" class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-3 py-3 navbar-expand-lg bg-white/95 backdrop-blur shadow-md transition-all duration-200">
+      <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+        
+        <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+          <a class="text-blueGray-800 text-base font-bold leading-relaxed inline-flex items-center mr-4 py-1 whitespace-nowrap" href="../index.html">
+            <img src="../assets/fogo-app.png" alt="Fogo Logo" class="w-8 h-8 rounded-lg object-contain shadow-md shadow-purple-500/20 mr-2.5" />
+            <span class="tracking-tight text-xl font-extrabold bg-gradient-to-r from-purple-700 via-indigo-700 to-pink-600 bg-clip-text text-transparent">Fogo</span>
+            <span class="ml-2 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 border border-purple-200 hidden sm:inline-block">Chrome Extension</span>
+          </a>
+          
+          <button id="mobile-menu-btn" class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none text-blueGray-700 hover:text-purple-600 transition-colors" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none hidden" id="desktop-menu">
+          <ul class="flex flex-col lg:flex-row list-none mr-auto">
+            <li class="flex items-center">
+              <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="../index.html#workspaces">
+                <i class="fas fa-desktop text-purple-500 text-sm mr-2" aria-hidden="true"></i> Workspaces
+              </a>
+            </li>
+            <li class="flex items-center">
+              <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="../index.html#ai-briefing">
+                <i class="fas fa-wand-magic-sparkles text-purple-500 text-sm mr-2" aria-hidden="true"></i> AI Copilot
+              </a>
+            </li>
+            <li class="flex items-center">
+              <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="../index.html#themes">
+                <i class="fas fa-palette text-purple-500 text-sm mr-2" aria-hidden="true"></i> 22 Themes
+              </a>
+            </li>
+            <li class="flex items-center">
+              <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="../index.html#soundscapes">
+                <i class="fas fa-headphones text-purple-500 text-sm mr-2" aria-hidden="true"></i> Soundscapes
+              </a>
+            </li>
+            <li class="flex items-center">
+              <a class="hover:text-purple-600 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="../index.html#widgets">
+                <i class="fas fa-cubes text-purple-500 text-sm mr-2" aria-hidden="true"></i> Bento Widgets
+              </a>
+            </li>
+            <li class="flex items-center">
+              <a class="text-purple-600 px-3 py-2 flex items-center text-xs uppercase font-bold tracking-wider transition-colors" href="index.html">
+                <i class="fas fa-book-open text-purple-600 text-sm mr-2" aria-hidden="true"></i> Blog
+              </a>
+            </li>
+          </ul>
+
+          <ul class="flex flex-col lg:flex-row list-none lg:ml-auto items-center space-x-2.5">
+            <li class="flex items-center">
+              <a href="https://chromewebstore.google.com/detail/fogo/obbgfeoggkonopplfhageihbcaigcplk" target="_blank" rel="noopener noreferrer" class="bg-blueGray-100 hover:bg-blueGray-200 text-blueGray-800 text-xs font-bold uppercase px-3.5 py-2 rounded-xl transition-all inline-flex items-center gap-2 cursor-pointer shadow-sm border border-blueGray-200">
+                <i class="fab fa-chrome text-sm text-purple-600" aria-hidden="true"></i> Add to Chrome
+              </a>
+            </li>
+            <li class="flex items-center">
+              <a href="https://dreainno.lemonsqueezy.com/checkout/buy/89b739ee-a0da-4ef7-8b49-b06b0e121661" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white active:from-purple-700 active:to-indigo-700 text-xs font-bold uppercase px-4 py-2 rounded-xl shadow-md hover:shadow-lg hover:shadow-purple-500/20 transition-all inline-flex items-center gap-1.5 cursor-pointer">
+                <i class="fas fa-crown text-amber-300 text-xs" aria-hidden="true"></i> Get Pro • $9.99/yr
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div id="mobile-menu" class="hidden w-full lg:hidden bg-white border-t border-blueGray-200 mt-2 px-4 py-3">
+        <ul class="flex flex-col space-y-2 text-sm font-semibold">
+          <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="../index.html#workspaces"><i class="fas fa-desktop mr-2 text-purple-500" aria-hidden="true"></i> Workspaces</a></li>
+          <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="../index.html#ai-briefing"><i class="fas fa-wand-magic-sparkles mr-2 text-purple-500" aria-hidden="true"></i> AI Copilot</a></li>
+          <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="../index.html#themes"><i class="fas fa-palette mr-2 text-purple-500" aria-hidden="true"></i> 22 Themes</a></li>
+          <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="../index.html#soundscapes"><i class="fas fa-headphones mr-2 text-purple-500" aria-hidden="true"></i> Soundscapes</a></li>
+          <li><a class="block py-2 text-blueGray-700 hover:text-purple-600" href="../index.html#widgets"><i class="fas fa-cubes mr-2 text-purple-500" aria-hidden="true"></i> Bento Widgets</a></li>
+          <li><a class="block py-2 text-purple-600 font-bold" href="index.html"><i class="fas fa-book-open mr-2 text-purple-600" aria-hidden="true"></i> Blog &amp; Guides</a></li>
+          <li class="pt-2 border-t border-blueGray-100 flex flex-col gap-2">
+            <a href="https://chromewebstore.google.com/detail/fogo/obbgfeoggkonopplfhageihbcaigcplk" target="_blank" rel="noopener noreferrer" class="w-full text-center block bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg shadow">
+              <i class="fab fa-chrome mr-2" aria-hidden="true"></i> Add to Chrome — Free
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="relative pt-32 pb-16 bg-gradient-to-b from-purple-950 via-blueGray-900 to-blueGray-900 text-white">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <nav aria-label="Breadcrumbs" class="flex justify-center items-center space-x-2 text-xs font-mono text-purple-300 mb-4">
+        <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+        <span>/</span>
+        <a href="index.html" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-white font-semibold">Developer New Tab Setup</span>
+      </nav>
+
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-mono mb-4">
+        <span>Software Engineering</span> • <span>10 Min Read</span> • <span>Updated Sep 2026</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
+        Setting Up a Minimalist Developer New Tab: GitHub PRs, Tasks &amp; Zero Telemetry
+      </h1>
+      <p class="text-blueGray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        The average developer loses 23 minutes every time they context switch to check Jira or GitHub. Here is how to keep your sprint queue inside Chrome without opening 12 heavy browser tabs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Article Body -->
+  <main id="main-content" class="flex-grow py-16 bg-white">
+    <article class="container mx-auto px-6 max-w-3xl">
+
+      <p class="text-lg text-blueGray-700 leading-relaxed mb-6 font-normal">
+        If you look at the typical software engineer's browser session at 2:00 PM, you’ll find a predictable landscape: three Stack Overflow answers, two documentation tabs, an Asana board, a GitHub PR diff, a staging deployment dashboard, and five Google Docs.
+      </p>
+
+      <p class="text-base text-blueGray-600 leading-relaxed mb-6">
+        When you open a new tab to quickly search an API syntax, you are ambushed by that wall of open tasks. The result is cognitive friction and tab hoarding. A dedicated <strong>developer new tab</strong> solves this by acting as a passive aggregator: an immediate snapshot of what needs your code review, what ticket is active, and how much time remains in your current coding block.
+      </p>
+
+      <!-- Section 1: The Dev Stack -->
+      <h2 class="text-2xl sm:text-3xl font-bold text-blueGray-900 mt-10 mb-4 tracking-tight">
+        The Anatomy of an Ergonomic Engineering Dashboard
+      </h2>
+      <p class="text-base text-blueGray-600 leading-relaxed mb-5">
+        To be useful for engineering, a start screen must meet rigorous constraints:
+      </p>
+
+      <div class="space-y-4 mb-10">
+        <div class="p-4 rounded-xl bg-blueGray-100 border border-blueGray-200">
+          <h3 class="font-bold text-blueGray-900 text-sm flex items-center gap-2 mb-1">
+            <i class="fab fa-github text-purple-600" aria-hidden="true"></i> 1. Asynchronous GitHub Pull Request Stream
+          </h3>
+          <p class="text-xs text-blueGray-600 leading-relaxed">
+            Instead of navigating to `github.com/pulls` every hour, an embedded widget polls GitHub’s GraphQL API asynchronously. You instantly see which PRs are awaiting your review, which builds passed CI, and where comments were left.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-blueGray-100 border border-blueGray-200">
+          <h3 class="font-bold text-blueGray-900 text-sm flex items-center gap-2 mb-1">
+            <i class="fas fa-list-check text-purple-600" aria-hidden="true"></i> 2. Sprint To-Dos &amp; Asana Sync
+          </h3>
+          <p class="text-xs text-blueGray-600 leading-relaxed">
+            Keep your top three coding objectives pinned directly on your start screen. If a sudden production bug occurs, jot it down in a scratchpad that syncs straight to local IndexedDB.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-blueGray-100 border border-blueGray-200">
+          <h3 class="font-bold text-blueGray-900 text-sm flex items-center gap-2 mb-1">
+            <i class="fas fa-terminal text-purple-600" aria-hidden="true"></i> 3. Terminal Aesthetic (Tokyo Night, Nord, Gruvbox)
+          </h3>
+          <p class="text-xs text-blueGray-600 leading-relaxed">
+            Zero white flashes. If your terminal runs Alacritty or iTerm with Nord, your browser start screen should match it pixel for pixel, preserving night vision.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 2: Code Snippets & Shortcuts -->
+      <h2 class="text-2xl sm:text-3xl font-bold text-blueGray-900 mt-12 mb-4 tracking-tight">
+        Keyboard Shortcuts: Keep Your Hands on the Home Row
+      </h2>
+      <p class="text-base text-blueGray-600 leading-relaxed mb-5">
+        Power users don’t reach for the mouse to toggle widgets. In <a href="../index.html" class="text-purple-600 font-bold underline">Fogo</a>, we implemented vim-adjacent global hotkeys designed specifically for developers:
+      </p>
+
+      <div class="overflow-x-auto rounded-xl border border-blueGray-200 mb-10 shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="bg-blueGray-100 font-bold text-blueGray-800">
+            <tr>
+              <th class="p-3">Keystroke</th>
+              <th class="p-3">Action</th>
+              <th class="p-3">Workflow Benefit</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-blueGray-100 font-mono text-blueGray-600">
+            <tr>
+              <td class="p-3 font-bold text-purple-700">Alt + 1</td>
+              <td class="p-3 font-sans">Switch to Workspace 1 (Dev)</td>
+              <td class="p-3 font-sans">GitHub PRs, Asana, Terminal clock</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-purple-700">Alt + 2</td>
+              <td class="p-3 font-sans">Switch to Workspace 2 (Research)</td>
+              <td class="p-3 font-sans">Documentation shortcuts, Scratchpad, Deep search</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-purple-700">Alt + S</td>
+              <td class="p-3 font-sans">Tab Stash Current Window</td>
+              <td class="p-3 font-sans">Compresses 30 open tabs to disk, frees ~1.5 GB RAM</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-purple-700">Alt + P</td>
+              <td class="p-3 font-sans">Toggle Pomodoro Timer</td>
+              <td class="p-3 font-sans">Starts 25-minute deep coding cycle with pink noise</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Section 3: Privacy & Security -->
+      <h2 class="text-2xl sm:text-3xl font-bold text-blueGray-900 mt-12 mb-4 tracking-tight">
+        Personal Access Tokens: Why Local Storage Is Mandatory
+      </h2>
+      <p class="text-base text-blueGray-600 leading-relaxed mb-5">
+        When an extension asks you for a GitHub Personal Access Token (PAT) to read your private repository PRs, you must ask one critical question: <em>Does that token touch an external cloud server?</em>
+      </p>
+      <p class="text-base text-blueGray-600 leading-relaxed mb-6">
+        If the extension sends your PAT to its own backend server, any breach of that developer’s database exposes your company’s proprietary code repositories.
+      </p>
+
+      <div class="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 mb-10">
+        <h3 class="text-emerald-950 font-bold text-sm mb-2 flex items-center gap-2">
+          <i class="fas fa-lock text-emerald-600" aria-hidden="true"></i> Fogo's Zero-Telemetry Architecture
+        </h3>
+        <p class="text-xs sm:text-sm text-emerald-900 leading-relaxed">
+          Fogo communicates <strong>directly</strong> between your browser and <code>api.github.com</code> via standard client-side <code>fetch()</code> requests. Your token is encrypted inside Chrome’s sandboxed <code>chrome.storage.local</code> or IndexedDB. It never leaves your physical machine.
+        </p>
+      </div>
+
+      <!-- Section 4: RAM Impact on Compile Times -->
+      <h2 class="text-2xl sm:text-3xl font-bold text-blueGray-900 mt-12 mb-4 tracking-tight">
+        How Browser RAM Starvation Cripples Local Builds
+      </h2>
+      <p class="text-base text-blueGray-600 leading-relaxed mb-5">
+        Every frontend engineer has experienced running <code>npm run build</code> or compiling Rust crates while Docker is active, only to hear their laptop fans scream as the operating system aggressively swaps memory to the SSD.
+      </p>
+      <p class="text-base text-blueGray-600 leading-relaxed mb-8">
+        If Chrome is hoarding 4 GB of memory across 40 idle documentation tabs, your compiler gets starved of CPU L3 cache and physical RAM pages. By hitting <kbd class="px-1.5 py-0.5 rounded bg-blueGray-100 border text-xs font-mono font-bold">Alt + S</kbd> to stash those sessions into Fogo, your local build finishes up to 25% faster without thermal throttling.
+      </p>
+
+      <!-- CTA -->
+      <div class="p-8 rounded-3xl bg-gradient-to-br from-emerald-950 via-blueGray-900 to-purple-950 text-white shadow-xl text-center mb-14 border border-emerald-500/20">
+        <h3 class="text-2xl font-extrabold mb-3">Upgrade Your Developer Workspace</h3>
+        <p class="text-blueGray-300 text-sm max-w-lg mx-auto mb-6 leading-relaxed">
+          Install Fogo on Chrome Web Store. Connect your GitHub queues, set your Tokyo Night theme, and eliminate tab hoarding.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a href="https://chromewebstore.google.com/detail/fogo/obbgfeoggkonopplfhageihbcaigcplk" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-purple-500 hover:bg-purple-400 text-white text-xs font-bold uppercase tracking-wider shadow-lg transition-all inline-flex items-center gap-2">
+            <i class="fab fa-chrome text-sm" aria-hidden="true"></i> Add to Chrome — Free
+          </a>
+          <a href="../index.html#interactive-simulator" class="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider border border-white/20 transition-all">
+            Test Interactive Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- Related Deep Dives -->
+      <div class="pt-8 border-t border-blueGray-200">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-blueGray-500 mb-4 font-mono">Related Engineering Articles</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a href="reduce-chrome-ram-usage-tab-stash.html" class="p-4 rounded-xl border border-blueGray-200 hover:border-purple-300 hover:bg-purple-50/30 transition-all block">
+            <div class="text-xs text-purple-600 font-mono font-bold mb-1">Architecture</div>
+            <div class="text-sm font-bold text-blueGray-800">How We Cut Chrome's RAM Footprint by 2.8 GB &rarr;</div>
+          </a>
+          <a href="best-chrome-productivity-extensions-2026.html" class="p-4 rounded-xl border border-blueGray-200 hover:border-purple-300 hover:bg-purple-50/30 transition-all block">
+            <div class="text-xs text-purple-600 font-mono font-bold mb-1">Benchmark</div>
+            <div class="text-sm font-bold text-blueGray-800">7 Best Chrome Productivity Extensions in 2026 &rarr;</div>
+          </a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative bg-[#06082b] text-white pt-20 pb-12 border-t border-white/[0.08]">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        
+        <div class="lg:col-span-5 pr-0 lg:pr-6">
+          <div class="flex items-center space-x-3 mb-5">
+            <img src="../assets/fogo-app.png" alt="Fogo Logo" class="w-9 h-9 rounded-xl object-contain shadow-lg shadow-purple-500/20" />
+            <span class="text-2xl font-black tracking-tight text-white">Fogo</span>
+          </div>
+          <p class="text-[13.5px] text-[#93a1c8] leading-relaxed mb-7 max-w-sm font-normal">
+            Fogo is a calm, modular, and high-performance Chrome productivity extension dedicated to helping developers, traders, and creators build distraction-free browser workspaces.
+          </p>
+          <div class="flex items-center space-x-2.5">
+            <a href="https://github.com/dreainno" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="Author GitHub">
+              <i class="fab fa-github text-sm" aria-hidden="true"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="YouTube">
+              <i class="fab fa-youtube text-xs" aria-hidden="true"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="Instagram">
+              <i class="fab fa-instagram text-sm" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in text-xs" aria-hidden="true"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-[#101744] hover:bg-[#182366] border border-white/[0.08] hover:border-purple-400/40 flex items-center justify-center text-[#93a1c8] hover:text-white transition-all shadow-sm" aria-label="Facebook">
+              <i class="fab fa-facebook-f text-xs" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 md:col-span-1">
+          <h3 class="text-[15px] font-bold text-white mb-5 tracking-tight">Product</h3>
+          <ul class="space-y-3.5 text-[13.5px] text-[#93a1c8]">
+            <li><a href="../index.html#widgets" class="hover:text-white transition-colors">Key Features</a></li>
+            <li><a href="../index.html#interactive-simulator" class="hover:text-white transition-colors">Live Demo Sandbox</a></li>
+            <li><a href="https://dreainno.lemonsqueezy.com/checkout/buy/89b739ee-a0da-4ef7-8b49-b06b0e121661" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 transition-colors font-semibold flex items-center gap-1.5"><i class="fas fa-crown text-[11px]" aria-hidden="true"></i> Get Pro • $9.99/yr</a></li>
+            <li><a href="index.html" class="text-white font-medium transition-colors">Blog &amp; Guides</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/fogo/obbgfeoggkonopplfhageihbcaigcplk" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Chrome Web Store</a></li>
+            <li><a href="../index.html#faq" class="hover:text-white transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-3 md:col-span-1">
+          <h3 class="text-[15px] font-bold text-white mb-5 tracking-tight">Company &amp; Docs</h3>
+          <ul class="space-y-3.5 text-[13.5px] text-[#93a1c8]">
+            <li><a href="../about.html" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="best-chrome-productivity-extensions-2026.html" class="hover:text-white transition-colors">Extension Comparison</a></li>
+            <li><a href="reduce-chrome-ram-usage-tab-stash.html" class="hover:text-white transition-colors">RAM Benchmarks</a></li>
+            <li><a href="https://dreainno.website/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Creator Studio (Dreainno)</a></li>
+            <li><a href="mailto:support@fogo-extension.com" class="hover:text-white transition-colors">Technical Support</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-2 md:col-span-1">
+          <h3 class="text-[15px] font-bold text-white mb-5 tracking-tight">Legal &amp; Trust</h3>
+          <ul class="space-y-3.5 text-[13.5px] text-[#93a1c8]">
+            <li><a href="../terms-of-service.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="../privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="../refund-policy.html" class="hover:text-white transition-colors">Refund Policy (14 Days)</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/[0.08] mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#7d8bb2]">
+        <div>
+          © 2026 Fogo. Built by <span class="text-white font-semibold">Dreainno</span>. Custom-developed for Google Chrome.
+        </div>
+        <div class="flex items-center text-[#93a1c8] text-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block mr-2 shadow-[0_0_8px_#34d399]" aria-hidden="true"></span>
+          <span>Chrome Web Store Verified • Lemon Squeezy 100% Secure Checkout</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

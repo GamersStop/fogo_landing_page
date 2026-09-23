@@ -6,15 +6,79 @@
   <!-- Homepage: Best Productivity Chrome Extension -->
   <url>
     <loc>https://getfogo.website/</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Blog & Productivity Hub -->
+  <url>
+    <loc>https://getfogo.website/blog/index.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Pillar Guide: Best Chrome Productivity Extensions 2026 -->
+  <url>
+    <loc>https://getfogo.website/blog/best-chrome-productivity-extensions-2026.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Guide: Customizable New Tab Chrome -->
+  <url>
+    <loc>https://getfogo.website/blog/customizable-new-tab-chrome-guide.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Guide: Developer New Tab Setup -->
+  <url>
+    <loc>https://getfogo.website/blog/developer-new-tab-setup-guide.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Guide: Trading Dashboard Extension Chrome -->
+  <url>
+    <loc>https://getfogo.website/blog/trading-dashboard-extension-chrome.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Guide: Reduce Chrome RAM Usage with Tab Stash -->
+  <url>
+    <loc>https://getfogo.website/blog/reduce-chrome-ram-usage-tab-stash.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Guide: Modular Browser Dashboard Workflows -->
+  <url>
+    <loc>https://getfogo.website/blog/modular-browser-dashboard-workflow.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Guide: Distraction-Free Study Dashboard with Pomodoro -->
+  <url>
+    <loc>https://getfogo.website/blog/distraction-free-study-dashboard-pomodoro.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
   <!-- About Us & Studio -->
   <url>
     <loc>https://getfogo.website/about.html</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -22,7 +86,7 @@
   <!-- Terms of Service -->
   <url>
     <loc>https://getfogo.website/terms-of-service.html</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -30,7 +94,7 @@
   <!-- Privacy Policy -->
   <url>
     <loc>https://getfogo.website/privacy-policy.html</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -38,7 +102,7 @@
   <!-- Refund Policy -->
   <url>
     <loc>https://getfogo.website/refund-policy.html</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
