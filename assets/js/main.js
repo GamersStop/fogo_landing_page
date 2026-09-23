@@ -135,10 +135,22 @@ function renderClockStyle() {
 
   if (currentClockStyle === 'swiss-dial') {
     container.classList.add('hidden');
-    if (swissContainer) swissContainer.classList.remove('hidden');
+    container.setAttribute('inert', '');
+    container.setAttribute('aria-hidden', 'true');
+    if (swissContainer) {
+      swissContainer.classList.remove('hidden');
+      swissContainer.removeAttribute('inert');
+      swissContainer.removeAttribute('aria-hidden');
+    }
   } else {
     container.classList.remove('hidden');
-    if (swissContainer) swissContainer.classList.add('hidden');
+    container.removeAttribute('inert');
+    container.removeAttribute('aria-hidden');
+    if (swissContainer) {
+      swissContainer.classList.add('hidden');
+      swissContainer.setAttribute('inert', '');
+      swissContainer.setAttribute('aria-hidden', 'true');
+    }
     container.classList.add(`clock-${currentClockStyle}`);
   }
 }
@@ -242,8 +254,12 @@ function switchWorkspace(wsKey) {
     const widgetType = w.getAttribute('data-ws-widget');
     if (data.widgets.includes(widgetType)) {
       w.classList.remove('hidden');
+      w.removeAttribute('inert');
+      w.removeAttribute('aria-hidden');
     } else {
       w.classList.add('hidden');
+      w.setAttribute('inert', '');
+      w.setAttribute('aria-hidden', 'true');
     }
   });
 }
@@ -692,9 +708,11 @@ function initFaqAccordion() {
       const isOpen = !content.classList.contains('hidden');
       document.querySelectorAll('[data-faq-content]').forEach(c => c.classList.add('hidden'));
       document.querySelectorAll('.faq-chevron').forEach(i => i.classList.remove('rotate-180'));
+      document.querySelectorAll('[data-faq-toggle]').forEach(b => b.setAttribute('aria-expanded', 'false'));
 
       if (!isOpen) {
         content.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
         if (icon) icon.classList.add('rotate-180');
       }
     });
@@ -710,12 +728,14 @@ function initMobileNav() {
 
   if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', (!isHidden).toString());
     });
 
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
       });
     });
   }
@@ -732,7 +752,10 @@ function initInstallModal() {
   openButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      if (modal) modal.classList.remove('hidden');
+      if (modal) {
+        modal.classList.remove('hidden');
+        closeBtn?.focus();
+      }
     });
   });
 
@@ -743,6 +766,13 @@ function initInstallModal() {
 
     modal.addEventListener('click', (e) => {
       if (e.target === modal) modal.classList.add('hidden');
+    });
+
+    // Close on Escape key for keyboard accessibility
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+      }
     });
   }
 }

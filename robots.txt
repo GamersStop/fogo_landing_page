@@ -33,5 +33,5 @@ User-agent: OAI-SearchBot
 Allow: /
 
 # Sitemaps & LLM Context
-Sitemap: https://dreainno.website/sitemap.xml
-# LLM Information Architecture: https://dreainno.website/llms.txt
+Sitemap: https://getfogo.website/sitemap.xml
+# LLM Information Architecture: https://getfogo.website/llms.txt

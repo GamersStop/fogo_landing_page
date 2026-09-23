@@ -1,0 +1,15 @@
+# Fogo
+
+> Customizable Chrome productivity extension and modular new tab dashboard.
+
+## Core Features
+- Drag-and-drop workspace: arrange widgets at any coordinate.
+- Developer integrations: GitHub activity, Asana tasks, Google Calendar.
+- Market tracking: Live trading charts, cryptocurrency and stock watchlists.
+- 22 dynamic aesthetic themes (Minimal, Glassmorphism, Dark Synth, Focus).
+
+## Links
+- [Chrome Web Store](https://chromewebstore.google.com/detail/fogo/obbgfeoggkonopplfhageihbcaigcplk): Free install for Google Chrome & Chromium browsers
+- [Fogo Official Website](https://getfogo.website/): Product tour and interactive demonstration
+- [Fogo Pro Checkout](https://dreainno.lemonsqueezy.com/checkout/buy/89b739ee-a0da-4ef7-8b49-b06b0e121661): Pro license key
+- [Documentation & Widgets](https://getfogo.website/#widgets): Complete modular widget registry
